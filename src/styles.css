@@ -1,0 +1,99 @@
+.body {
+  margin: 30px auto;
+  padding: 30px 20px 10px 20px;
+  width: 1000px;
+  font-family: "Allerta Stencil", sans-serif;
+  background: url("images/sun.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+}
+
+.form-group {
+  width: 40%;
+}
+
+.fa-search {
+  font-size: 27px;
+}
+
+.fa-street-view {
+  font-size: 27px;
+}
+
+.currentcity {
+  font-size: 70px;
+  font-weight: bold;
+  font-variant: small-caps slashed-zero;
+  text-transform: capitalize;
+  padding: 0;
+  line-height: 70px;
+  color: white;
+}
+
+.units {
+  display: inline-block;
+  font-size: 25px;
+  vertical-align: top;
+  margin: 25px 0;
+}
+
+.unittype:hover {
+  cursor: pointer;
+  color: grey;
+}
+
+.currentdayhour {
+  margin-top: 0;
+  margin-left: 5px;
+  color: white;
+}
+
+.currenttemp {
+  font-size: 80px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 50px;
+  margin-right: 0px;
+}
+
+.fa-cloud-sun-rain {
+  font-size: 100px;
+  margin: 0 auto;
+  text-shadow: 10px;
+}
+.maxmin .temp {
+  font-weight: bold;
+}
+
+.maxmin {
+  padding-top: 45px;
+  font-size: 20px;
+  color: black;
+}
+.maxmintag {
+  text-decoration: underline;
+}
+.leftinfo {
+  text-align: center;
+}
+
+tbody {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.day {
+  width: 450px;
+}
+.dailytemps {
+  text-align: right;
+  width: 50px;
+}
+.dailyicon {
+  width: 20px;
+  text-align: center;
+  line-height: 10px;
+  font-size: 20px;
+}

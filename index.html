@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ffc6994ba1.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <section class="body">
+        <form>
+            <div class="input-group">
+                <div class="form-group">
+                    <input class="form-control" id="search" placeholder="Search Here" autocomplete="off" />
+                </div>
+                <button type="submit" id="submit" class="btn"><i class="fas fa-search"></i></button>
+                <button type="button" id="currentlocation" class="btn"><i class="fas fa-street-view"></i></button>
+            </div>
+        </form>
+
+
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="col-6 no-gutters">
+                    <div class="currentcitytime">
+                        <span class="currentcity" id="maincity">
+
+                        </span>
+                        <br />
+                        <span class="currentdayhour no no-gutters" id="dayhour">
+                            Sunday - 10.30H
+                        </span>
+                    </div>
+                    <div class="row  leftinfo">
+                        <div>
+                            <span class="col-sm currenttemp p-0" id="tempe">
+
+                            </span>
+                            <span id="units" class="units">
+                                ºC
+                        </div>
+                        </span>
+                        <div class="col-sm no-gutters">
+                            <i class="fas fa-cloud-sun-rain"></i>
+                        </div>
+                    </div>
+                    <div class="row leftinfo no-gutters">
+                        <div class="col-sm maxmin leftinfo">
+                            <span class="maxmintag">
+                                Maximum</span>
+                            <br />
+                            <span class="temp">
+                                26ºC
+                            </span>
+                        </div>
+                        <div class="col-sm maxmin leftinfo">
+                            <span class="maxmintag">
+                                Minimum</span>
+                            <br />
+                            <span class="temp">
+                                8ºC
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td class="day">Monday</td>
+                                <td>27ºC/12ºC</td>
+                                <td><i class="fas fa-sun dailyicon"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="day">Tuesday</td>
+                                <td class="dailytemps">30ºC/10ºC</td>
+                                <td><i class="fas fa-cloud-sun dailyicon"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="day">Wednesday</td>
+                                <td class="dailytemps">21ºC/10ºC</td>
+                                <td><i class="fas fa-cloud-sun dailyicon"></td>
+                            </tr>
+                            <tr>
+                                <td class="day">Thursday</td>
+                                <td class="dailytemps">19ºC/9ºC</td>
+                                <td><i class="fas fa-cloud-sun-rain dailyicon"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="day">Friday</td>
+                                <td class="dailytemps">15ºC/6ºC</td>
+                                <td><i class="fas fa-cloud-showers-heavy dailyicon"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="day">Saturday</td>
+                                <td class="dailytemps">15ºC/6ºC</td>
+                                <td><i class="fas fa-cloud-showers-heavy dailyicon"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="day"></td>
+                                <td class="dailytemps"></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script src="src/index.js"></script>
+</body>
+
+</html>
