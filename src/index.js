@@ -2,9 +2,17 @@ function showWeather(response) {
   let city = document.querySelector("#maincity");
   let temperature = Math.round(response.data.main.temp);
   let tempe = document.querySelector("#tempe");
+  let tempMax = document.querySelector("#temp-max");
+  let tempMin = document.querySelector("#temp-min");
+  let iconElement = document.querySelector("#main-icon");
   city.innerHTML = `${response.data.name}`;
   tempe.innerHTML = `${temperature}`;
-  console.log(response.data.name);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  tempMax.innerHTML = `${Math.round(response.data.main.temp_max)}ºC`;
+  tempMin.innerHTML = `${Math.round(response.data.main.temp_min)}ºC`;
 }
 
 function retrievePosition(position) {
