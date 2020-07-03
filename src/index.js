@@ -5,6 +5,8 @@ function showWeather(response) {
   let tempMax = document.querySelector("#temp-max");
   let tempMin = document.querySelector("#temp-min");
   let iconElement = document.querySelector("#main-icon");
+  let searchLat = `${response.data.coord.lat}`;
+  let searchLon = `${response.data.coord.lon}`;
   city.innerHTML = `${response.data.name}`;
   tempe.innerHTML = `${temperature}`;
   iconElement.setAttribute(
@@ -13,6 +15,21 @@ function showWeather(response) {
   );
   tempMax.innerHTML = `${Math.round(response.data.main.temp_max)}ºC`;
   tempMin.innerHTML = `${Math.round(response.data.main.temp_min)}ºC`;
+  console.log(searchLat);
+  console.log(searchLon);
+
+  function showGeo(response) {
+    console.log(response);
+  }
+
+  let geoApiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let geoUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${searchLat}&lon=${searchLon}&exclude=current,minutely,hourly&units=metric&appid=${geoApiKey}`;
+
+  axios.get(geoUrl).then(showGeo);
+}
+
+function showGeo(response) {
+  console.log(response);
 }
 
 function retrievePosition(position) {
