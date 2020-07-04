@@ -20,8 +20,35 @@ function showWeather(response) {
 
   function showGeo(response) {
     console.log(response);
-  }
 
+    let forecastElement = document.querySelector("#teste-week");
+    forecastElement.innerHTML = null;
+    let forecast = null;
+
+    for (let i = 0; i < 5; i++) {
+      forecast = response.data.daily[i];
+      console.log(forecast);
+      let nexday = i + 1;
+      let dayTeste = new Date(response.data.daily[nexday].dt * 1000);
+      let daysTeste = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+      let realToday = daysTeste[dayTeste.getDay()];
+
+      console.log(realToday);
+
+      forecastElement.innerHTML += `
+     <div>
+    ${realToday}</div>
+     `;
+    }
+  }
   let geoApiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
   let geoUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${searchLat}&lon=${searchLon}&exclude=current,minutely,hourly&units=metric&appid=${geoApiKey}`;
 
