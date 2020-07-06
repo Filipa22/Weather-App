@@ -15,21 +15,17 @@ function showWeather(response) {
   );
   tempMax.innerHTML = `${Math.round(response.data.main.temp_max)}ºC`;
   tempMin.innerHTML = `${Math.round(response.data.main.temp_min)}ºC`;
-  console.log(searchLat);
-  console.log(searchLon);
 
   function showGeo(response) {
-    console.log(response);
-
     let forecastElement = document.querySelector("#teste-week");
     forecastElement.innerHTML = null;
     let forecast = null;
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
       forecast = response.data.daily[i];
       console.log(forecast);
-      let nexday = i + 1;
-      let dayTeste = new Date(response.data.daily[nexday].dt * 1000);
+      let nextday = i + 1;
+      let dayTeste = new Date(response.data.daily[nextday].dt * 1000);
       let daysTeste = [
         "Sunday",
         "Monday",
@@ -40,23 +36,26 @@ function showWeather(response) {
         "Saturday",
       ];
       let realToday = daysTeste[dayTeste.getDay()];
-
-      console.log(realToday);
-
+      let dailyMax = Math.round(response.data.daily[nextday].temp.max);
+      let dailyMin = Math.round(response.data.daily[nextday].temp.min);
+      let dailyIcon = response.data.daily[nextday].weather[0].icon;
+      console.log(dailyIcon);
       forecastElement.innerHTML += `
-     <div>
-    ${realToday}</div>
+      <tbody>
+         <tr class="tablelines">
+           <td class="day">${realToday}</td>
+           <td>${dailyMax}ºC/${dailyMin}ºC</td>
+           <td><img src = \http://openweathermap.org/img/wn/${dailyIcon}@2x.png\ width= 30px></td>
+           </tr>
+            </tbody>
+
      `;
     }
   }
-  let geoApiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let geoApiKey = "013862d923ab37409ff3bafb37939a3d";
   let geoUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${searchLat}&lon=${searchLon}&exclude=current,minutely,hourly&units=metric&appid=${geoApiKey}`;
 
   axios.get(geoUrl).then(showGeo);
-}
-
-function showGeo(response) {
-  console.log(response);
 }
 
 function retrievePosition(position) {
@@ -74,19 +73,21 @@ function CurrentLocation(event) {
 let button = document.querySelector("#currentlocation");
 button.addEventListener("click", CurrentLocation);
 
-function searchcity(event) {
-  let inputcity = document.querySelector("#search");
-  let city = document.querySelector("#maincity");
-  let cityResult = (city.innerHTML = `${search.value}`);
-  event.preventDefault();
-  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityResult}&units=metric&appid=${apiKey}`;
+function searchCity(city) {
+  let apiKey = "013862d923ab37409ff3bafb37939a3d";
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
   axios.get(url).then(showWeather);
 }
+searchCity("Lisbon");
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#search");
+  searchCity(city.value);
+}
 
 let mainCity = document.querySelector("form");
-mainCity.addEventListener("submit", searchcity);
+mainCity.addEventListener("submit", handleSubmit);
 
 let now = new Date();
 

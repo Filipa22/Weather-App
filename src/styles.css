@@ -39,30 +39,23 @@
   margin: 25px 0;
 }
 
-.unittype:hover {
-  cursor: pointer;
-  color: grey;
-}
-
-.currentdayhour {
-  margin-top: 0;
-  margin-left: 5px;
-  color: white;
-}
-
 .currenttemp {
   font-size: 80px;
-  padding-left: 0px;
-  padding-right: 0px;
-  margin-left: 50px;
+  padding-left: 70px;
+  padding-right: 20px;
+  margin-left: 0px;
   margin-right: 0px;
 }
 
-.fa-cloud-sun-rain {
-  font-size: 100px;
-  margin: 0 auto;
-  text-shadow: 10px;
+.mainicon {
+  display: block;
+  size: 80px;
+  padding-left: 78px;
+  padding-right: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
+
 .maxmin .temp {
   font-weight: bold;
 }
@@ -77,6 +70,9 @@
 }
 .leftinfo {
   text-align: center;
+}
+.teste {
+  color: black;
 }
 
 tbody {
