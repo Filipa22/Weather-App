@@ -43,7 +43,7 @@ function showWeather(response) {
       forecastElement.innerHTML += `
       <tbody>
          <tr class="tablelines">
-           <td class="day">${realToday}</td>
+           <td>${realToday}</td>
            <td>${dailyMax}ºC/${dailyMin}ºC</td>
            <td><img src = \http://openweathermap.org/img/wn/${dailyIcon}@2x.png\ width= 30px></td>
            </tr>
