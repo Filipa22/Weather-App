@@ -39,25 +39,19 @@
 .units {
   display: inline-block;
   font-size: 25px;
-  vertical-align: top;
-  margin: 25px 0;
+  position: relative;
+  top: -20px;
 }
 
 .currenttemp {
   font-size: 80px;
-  padding-left: 70px;
-  padding-right: 20px;
-  margin-left: 0px;
-  margin-right: 0px;
+
+  vertical-align: middle;
 }
 
 .mainicon {
-  display: block;
-  size: 80px;
-  padding-left: 78px;
-  padding-right: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
+  vertical-align: middle;
+  padding-left: 50px;
 }
 
 .maxmin .temp {
@@ -65,7 +59,7 @@
 }
 
 .maxmin {
-  padding-top: 45px;
+  padding-top: 35px;
   font-size: 20px;
   color: black;
 }
@@ -109,4 +103,12 @@ tbody {
 .active:hover {
   text-decoration: none;
   color: white;
+}
+.nowicon {
+  display: block;
+  padding-left: 50px;
+}
+.tempeicon {
+  display: block;
+  text-align: center;
 }
