@@ -23,6 +23,9 @@
   font-size: 27px;
 }
 
+.Weathdescrip {
+  text-transform: capitalize;
+}
 .currentcity {
   font-size: 70px;
   font-weight: bold;
@@ -72,9 +75,6 @@
 .leftinfo {
   text-align: center;
 }
-.teste {
-  color: black;
-}
 
 tbody {
   font-weight: bold;
@@ -99,4 +99,14 @@ tbody {
   text-align: center;
   padding: 0px;
   font-size: 12px;
+}
+
+.active {
+  color: white;
+  cursor: default;
+}
+
+.active:hover {
+  text-decoration: none;
+  color: white;
 }
